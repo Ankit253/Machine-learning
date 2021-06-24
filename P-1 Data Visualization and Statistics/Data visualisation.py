@@ -1,14 +1,12 @@
 # -*- coding: utf-8 -*-
 """
-Created on Tue Sep 22 11:20:13 2020
-
 @author: ankit
 """
-
+#Contains different Data visualisation techniques 
 #Q1=============================================================
 
 print('\nQuestion 1:')
-import pandas as pd
+import pandas as pd   #importing pandas
 df=pd.read_csv("landslide_data3.csv") 
 dataframe=df.describe()
 dataframe.drop(['count','25%','75%'],inplace=True)
@@ -24,14 +22,14 @@ print(frame[frame.columns[6:]])
 #Q2(a)============================================================
 print('\nQuestion 2:')
 print('a)')
-import matplotlib.pyplot as plt 
+import matplotlib.pyplot as plt   #importing matplotlib
 for i in df:
     if i != 'dates' and i!= 'stationid' and i!= 'rain':
         df.plot.scatter(x="rain",y=i)
 plt.show()
 
 
-print('b)')
+print('b)')      #Scatter plot
 
 import matplotlib.pyplot as plt 
 for i in df:
@@ -41,9 +39,9 @@ plt.show()
 
 
 #Q3==============================================================
-print('\nQuestion 3:')
+print('\nQuestion 3:')          #correlation
 print('a)')
-print('Correlation of rain with:\n')
+print('Correlation of rain with:\n')    
 r=df.corrwith(df['rain'])
 print(r)
 
